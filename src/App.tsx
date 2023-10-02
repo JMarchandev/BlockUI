@@ -1,24 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Alerts from "./containers/alerts";
+import { Buttons } from "./containers/buttons";
+import Chat from "./containers/chat";
+import Colors from "./containers/colors";
+import Forms from "./containers/forms";
+import Progress from "./containers/progress";
+import { Tags } from "./containers/tags";
+import Typography from "./containers/typography";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App container my-5">
+      <Typography />
+      <Colors />
+      <Forms />
+      <Tags />
+      <Buttons />
+      <Alerts />
+      <Progress />
+      <Chat />
     </div>
   );
 }

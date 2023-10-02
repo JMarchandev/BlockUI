@@ -1,0 +1,442 @@
+$primary: #2c2738;
+$secondary: #756f86;
+$accent: #0880ae;
+$warning: #f2ac57;
+$success: #14a38b;
+$danger: #ff7171;
+$bui-muted: #7c9cbf;
+$bright: #ffffff;
+$shade: #dbe2ea;
+$tint: #ebf4f8;
+
+$theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "accent": $accent,
+    "warning": $warning,
+    "success": $success,
+    "danger": $danger,
+    "bui-muted": $bui-muted,
+    "bright": $bright,
+    "shade": $shade,
+    "tint": $tint,
+);
+
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans");
+body,
+html {
+    background-color: $tint !important;
+    font-family: "IBM Plex Sans", sans-serif !important; // Utilisez le nom de la police sans les espaces ni les signes +
+}
+
+@for $i from 100 through 1000 {
+    .bold-#{$i} {
+        font-weight: #{$i} !important;
+    }
+}
+
+$max-font-size: 10000;
+@for $i from 0 through $max-font-size {
+    .font-size-#{$i} {
+        font-size: #{$i}px !important;
+    }
+}
+
+$max-line-height: 100;
+@for $i from 0 through $max-line-height {
+    .line-height-#{$i} {
+        line-height: #{$i}px !important;
+    }
+}
+.line-height-normal {
+    line-height: normal !important;
+}
+
+.font-style-normal {
+    font-style: "normal" !important;
+}
+
+.solid {
+    filter: drop-shadow(0px 16px 56px rgba(44, 39, 56, 0.08)) !important;
+    box-shadow: 0px 4px 8px 0px rgba(44, 39, 56, 0.1) !important;
+    border-radius: 20px !important;
+    border: 0 !important;
+}
+
+.form-control,
+.dropdown-toggle,
+.input-group-text {
+    height: 52px !important;
+    padding: 16px !important;
+    border-radius: 6px !important;
+    border: 1px solid $shade !important;
+    background: $bright !important;
+    box-shadow: 0px 4px 8px 0px rgba(44, 39, 56, 0.04) !important;
+    color: $primary !important;
+
+    &::placeholder {
+        color: $bui-muted !important;
+    }
+
+    &:disabled {
+        opacity: 0.24 !important;
+    }
+
+    &.disabled {
+        opacity: 0.24 !important;
+        border: 1px solid $shade !important;
+    }
+
+    &:focus {
+        border: 2px solid $accent !important;
+        transition: none !important;
+        &.with-icon-right,
+        &.with-icon-left {
+            border-right: 0px !important;
+            & + .input-group-text {
+                border: 2px solid $accent !important;
+                border-left: 0px !important;
+            }
+        }
+    }
+}
+
+.bui-textarea {
+    height: auto !important;
+}
+
+.input-group-text.with-icon-right {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.input-group-text.with-icon-left {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.form-control.with-icon-right {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.form-control.with-icon-left {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.input-group-text {
+    color: $accent !important;
+}
+
+.dropdown-toggle::after {
+    display: none !important;
+}
+.dropdown-toggle .disabled {
+    opacity: 0.24 !important;
+    border: 1px solid $shade !important;
+}
+
+.chevron-icon {
+    transition: transform 0.3s ease;
+}
+
+.chevron-icon.open {
+    transform: rotate(-90deg);
+}
+
+.dropdown-menu {
+    border-radius: 6px !important;
+    border: 1px solid $shade !important;
+    background: $bright !important;
+    box-shadow: 0px 20px 20px 0px rgba(44, 39, 56, 0.04), 0px 4px 8px 0px rgba(44, 39, 56, 0.04) !important;
+    width: 100% !important;
+}
+
+.dropdown-item {
+    height: 44px !important;
+
+    &:hover {
+        background-color: $tint !important;
+    }
+}
+
+.number-input {
+    display: flex !important;
+    width: 180px !important;
+    height: 52px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-shrink: 0 !important;
+    box-shadow: 0px 4px 8px 0px rgba(44, 39, 56, 0.08) !important;
+
+    &.disabled {
+        opacity: 0.24 !important;
+    }
+}
+
+.number-input-btn {
+    width: 60px !important;
+
+    &.minus {
+        border-top-right-radius: 0px !important;
+        border-bottom-right-radius: 0px !important;
+    }
+    &.plus {
+        border-top-left-radius: 0px !important;
+        border-bottom-left-radius: 0px !important;
+    }
+    // border-radius: 6px 0px 0px 6px;
+    // background: rgba(0, 0, 0, 0);
+    // box-shadow: -1px 0px 0px 0px $shade inset;
+
+    &:focus {
+        color: $bright !important;
+        background-color: #0880ae !important;
+    }
+}
+
+.number-input-value {
+    border-radius: 0px !important;
+}
+
+#number-input-focus-minus .minus {
+    color: $bright !important;
+    background-color: #0880ae !important;
+}
+#number-input-focus-plus .plus {
+    color: $bright !important;
+    background-color: #0880ae !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.form-check-input {
+    margin-right: 1em !important;
+    margin-top: 0 !important;
+    width: 28px !important;
+    height: 28px !important;
+    border: 2px solid $accent !important;
+
+    --bs-form-check-bg: none !important;
+
+    &:checked {
+        border-color: $accent !important;
+    }
+
+    &:focus {
+        border-color: none !important;
+        box-shadow: none !important;
+    }
+}
+
+input[type="checkbox"] {
+    background: $bright !important;
+    margin-right: 1em !important;
+    margin-top: 0 !important;
+    width: 28px !important;
+    height: 28px !important;
+    position: relative !important;
+
+    &:focus {
+        border-color: none !important;
+
+        box-shadow: none !important;
+    }
+}
+
+input[type="checkbox"]:checked:after {
+    content: url('data:image/svg+xml;utf8,<svg width="16" height="12" viewBox="0 0 16 12" stroke="%230880ae" xmlns="http://www.w3.org/2000/svg"><path id="Mask" d="M14.6344 0.634339C14.9468 0.32192 15.4533 0.32192 15.7657 0.634339C16.0782 0.946758 16.0782 1.45329 15.7657 1.76571L6.16573 11.3657C5.85331 11.6781 5.34678 11.6781 5.03436 11.3657L1.03436 7.36571C0.721944 7.05329 0.721944 6.54676 1.03436 6.23434C1.34678 5.92192 1.85331 5.92192 2.16573 6.23434L5.60005 9.66865L14.6344 0.634339Z" stroke="accent"/></svg>') !important;
+
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    -webkit-transform: translate(-50%, -50%) !important;
+    -moz-transform: translate(-50%, -50%) !important;
+    -ms-transform: translate(-50%, -50%) !important;
+    transform: translate(-50%, -50%) !important;
+}
+
+input[type="radio"] {
+    width: 25px !important;
+    height: 25px !important;
+    padding: 6px !important;
+
+    background-color: transparent !important;
+    border-radius: 50% !important;
+    accent-color: $accent !important;
+}
+
+input[type="radio"]:checked {
+    background-color: $accent !important;
+}
+
+/* Stylisation de la ligne du range */
+.custom-range-container {
+    position: relative !important;
+    width: 100% !important;
+}
+
+.custom-range {
+    width: 100% !important;
+    height: 2px !important;
+    background-color: grey !important;
+    outline: none !important;
+    border: none !important;
+}
+
+/* Stylisation du curseur */
+input[type="range"]::-webkit-slider-thumb {
+    width: 30px !important;
+    height: 30px !important;
+    background-color: $bright !important; /* Utilisation de la variable pour la couleur du curseur */
+    border: none !important;
+    border-radius: 50% !important;
+    -webkit-appearance: none !important;
+    cursor: pointer !important;
+}
+
+/* Stylisation de la ligne du range */
+input[type="range"] {
+    accent-color: $accent !important; /* Couleur de l'arrière-plan de la ligne */
+    outline: none !important; /* Supprimer la bordure par défaut */
+    border: none !important; /* Supprimer la bordure par défaut */
+    width: 100% !important; /* Assurer que la ligne s'étend sur toute la largeur du composant */
+}
+
+.rounded-pill {
+    width: auto !important;
+    padding: 8px 8px !important;
+    border-radius: 17px !important;
+    border: 1px solid $shade !important;
+    background: $bright !important;
+    box-shadow: 0px 2px 4px 0px rgba(44, 39, 56, 0.08), 0px 1px 2px 0px rgba(44, 39, 56, 0) !important;
+}
+
+.custom-btn {
+    color: $bui-muted !important;
+    padding: 8px 28px !important;
+    border-radius: 3px !important;
+    border: 1px solid $shade !important;
+    background: $bright !important;
+    box-shadow: 0px 4px 8px 0px rgba(44, 39, 56, 0.08), 0px 2px 4px 0px rgba(44, 39, 56, 0) !important;
+
+    &.md {
+        padding: 14px 45px !important;
+    }
+    &.lg {
+        padding: 18px 65px !important;
+    }
+
+    &.full {
+        background: $accent !important;
+        color: $bright !important;
+        &:disabled {
+            color: $primary !important;
+            background: $bright !important;
+
+            opacity: 0.24 !important;
+            border: 2px solid $shade !important;
+        }
+    }
+
+    &.outlined {
+        border: 2px solid $bui-muted !important;
+        &:disabled {
+            color: $primary !important;
+            background: $bright !important;
+            opacity: 0.24 !important;
+        }
+    }
+
+    &:focus {
+        border: 2px solid $accent !important;
+    }
+
+    &.focus {
+        border: 2px solid $accent !important;
+    }
+
+    &:disabled {
+        color: $primary !important;
+
+        opacity: 0.24 !important;
+
+        border-radius: 3px !important;
+        border: 2px solid $shade !important;
+        background: $tint !important;
+        box-shadow: 0px 2px 4px 0px rgba(44, 39, 56, 0.08) !important;
+    }
+}
+
+.custom-alert {
+    padding: 18px 24px !important;
+    border-radius: 10px !important;
+    box-shadow: 0px 24px 48px 0px rgba(44, 39, 56, 0.08), 0px 12px 24px 0px rgba(44, 39, 56, 0.04) !important;
+}
+
+@each $variant,
+    $bgColor
+        in (bright: $bright, primary: $primary, accent: $accent, warning: $warning, success: $success, danger: $danger)
+{
+    .custom-alert.#{$variant} {
+        background-color: $bgColor !important;
+        color: $bright !important; // Couleur de texte par défaut
+        border: 1px solid darken($bgColor, 10%) !important;
+    }
+}
+
+// Personnalisation de la couleur de texte pour la variante "bright"
+.custom-alert.bright {
+    color: $accent !important; // Couleur de texte personnalisée
+}
+
+.custom-progress-bar {
+    height: 8px !important;
+}
+
+.chat-bubble {
+    width: 240px;
+    height: 50px;
+    border-radius: 6px;
+    background: #2c2738;
+    display: flex;
+    align-items: center;
+    padding: 16px;
+
+    &.bottom-right {
+        border-bottom-right-radius: 0;
+    }
+    &.top-right {
+        border-top-right-radius: 0;
+    }
+    &.bottom-left {
+        border-bottom-left-radius: 0;
+    }
+    &.top-left {
+        border-top-left-radius: 0;
+    }
+
+    &.bg-bright {
+        background-color: $bright;
+        color: $secondary;
+    }
+    &.bg-primary {
+        background-color: $primary;
+        color: $bright;
+    }
+    &.bg-accent {
+        background-color: $accent;
+        color: $bright;
+    }
+}
+
+@import "~bootstrap/scss/bootstrap";
